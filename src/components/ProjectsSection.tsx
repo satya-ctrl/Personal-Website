@@ -35,18 +35,15 @@ const projects = [
   {
     num: '03',
     category: 'Personal',
-    name: 'Stock Market Prediction',
+    name: 'Stock Market Prediction (StockFlow)',
     tech: ['Python', 'ML', 'React', 'FastAPI'],
     description:
       'AI-powered stock market prediction system using machine learning models to analyze market trends and forecast stock prices with real-time data visualization.',
-    href: '#',
+    href: 'https://stock-flow-tan-beta.vercel.app',
     images: {
-      col1Top:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
-      col1Bottom:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85',
-      col2:
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      col1Top: '/projects/project3-mockup.png',
+      col1Bottom: '/projects/project3-mockup.png',
+      col2: '/projects/project3-mockup.png',
     },
   },
   {
@@ -63,6 +60,45 @@ const projects = [
       col2: '/projects/project4-3.png',
     },
   },
+  {
+    num: '05',
+    category: 'Work',
+    name: 'Leave Request System',
+    tech: ['Web', 'App'],
+    description: 'Noventiq Work - A system for managing and processing employee leave requests efficiently.',
+    href: 'https://leave-request-system-tau.vercel.app',
+    images: {
+      col1Top: '/projects/project5-1.png',
+      col1Bottom: '/projects/project5-2.png',
+      col2: '/projects/project5-3.png',
+    },
+  },
+  {
+    num: '06',
+    category: 'Personal',
+    name: 'Aethera (Resume Editor)',
+    tech: ['React', 'PDF Processing', 'Interactive'],
+    description: 'A layout-preserving document studio redefining resumes. Features an interactive custom PDF editor and visual comparison tools for precise layout reflow.',
+    href: 'https://resumeeditor-9me0c4brv-satya-ctrls-projects.vercel.app/',
+    images: {
+      col1Top: '/projects/project6-mockup.png',
+      col1Bottom: '/projects/project6-mockup.png',
+      col2: '/projects/project6-mockup.png',
+    },
+  },
+  {
+    num: '07',
+    category: 'Personal',
+    name: 'WhatsApp Orchestrator',
+    tech: ['JavaScript', 'API', 'Automation'],
+    description: 'An orchestrator for managing and automating WhatsApp operations and workflows.',
+    href: 'https://whatsapp-orchestrator-apkn.onrender.com/',
+    images: {
+      col1Top: '/projects/project7-1.png',
+      col1Bottom: '/projects/project7-2.png',
+      col2: '/projects/project7-3.png',
+    },
+  }
 ];
 
 const ProjectCard = ({
@@ -84,30 +120,30 @@ const ProjectCard = ({
   const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
 
   return (
-    <div ref={cardRef} className="h-[85vh]">
+    <div ref={cardRef} className="h-[100vh]">
       <motion.div
-        className="sticky top-24 md:top-32 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 origin-top"
+        className="sticky top-6 md:top-10 rounded-[30px] sm:rounded-[40px] md:rounded-[50px] border border-[#D7E2EA]/20 bg-[#0C0C0C]/60 backdrop-blur-md p-4 sm:p-5 md:p-6 origin-top flex flex-col h-[94vh]"
         style={{
           scale,
-          top: `${96 + index * 28}px`,
+          top: `${24 + index * 20}px`,
         }}
       >
         {/* Top row */}
-        <div className="flex items-start justify-between mb-4 sm:mb-6 md:mb-8 flex-wrap gap-4">
-          <div className="flex items-start gap-4 sm:gap-6 md:gap-8">
+        <div className="flex items-start justify-between mb-2 md:mb-3 flex-wrap gap-4 flex-shrink-0">
+          <div className="flex items-start gap-3 sm:gap-4 md:gap-5">
             <span
               className="hero-heading font-black leading-none"
-              style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 80px)' }}
             >
               {project.num}
             </span>
-            <div className="flex flex-col gap-1 pt-2 sm:pt-4 md:pt-6">
+            <div className="flex flex-col gap-1 pt-1 sm:pt-2 md:pt-3">
               <span className="text-[#D7E2EA]/60 text-sm sm:text-base uppercase tracking-wider">
                 {project.category}
               </span>
               <h3
                 className="text-[#D7E2EA] font-medium uppercase"
-                style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}
+                style={{ fontSize: 'clamp(1rem, 1.8vw, 1.8rem)' }}
               >
                 {project.name}
               </h3>
@@ -131,40 +167,31 @@ const ProjectCard = ({
               </p>
             </div>
           </div>
-          <div className="pt-2 sm:pt-4 md:pt-6">
+          <div className="pt-2">
             <LiveProjectButton href={project.href} />
           </div>
         </div>
 
-        {/* Bottom row - image grid */}
-        <div className="flex gap-3 sm:gap-4 md:gap-6">
-          {/* Left column - 40% */}
-          <div className="w-[40%] flex flex-col gap-3 sm:gap-4 md:gap-6">
-            <img
-              src={project.images.col1Top}
-              alt={`${project.name} screenshot 1`}
-              className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
-              loading="lazy"
-            />
-            <img
-              src={project.images.col1Bottom}
-              alt={`${project.name} screenshot 2`}
-              className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
-              loading="lazy"
-            />
+        {/* Bottom row - large image preview (since iframes are blocked by Vercel) */}
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 w-full rounded-[15px] sm:rounded-[20px] md:rounded-[25px] overflow-hidden border border-[#D7E2EA]/10 bg-black/50 relative group block cursor-pointer"
+        >
+          <img
+            src={project.images.col2 || project.images.col1Top}
+            alt={`${project.name} preview`}
+            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+            loading="lazy"
+          />
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="bg-[#D7E2EA] text-[#0C0C0C] font-bold px-6 py-3 rounded-full uppercase tracking-wider text-sm sm:text-base">
+              Open Live Site
+            </span>
           </div>
-          {/* Right column - 60% */}
-          <div className="w-[60%]">
-            <img
-              src={project.images.col2}
-              alt={`${project.name} screenshot 3`}
-              className="w-full h-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        </a>
       </motion.div>
     </div>
   );
@@ -174,7 +201,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
+      className="border-t border-[#D7E2EA]/10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative z-10"
     >
       <FadeIn delay={0} y={40}>
         <h2

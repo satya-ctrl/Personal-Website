@@ -12,20 +12,7 @@ const navLinks = [
 const HeroSection = () => {
   return (
     <section className="h-screen flex flex-col relative" style={{ overflowX: 'clip' }}>
-      {/* Navbar */}
-      <FadeIn delay={0} y={-20} className="relative z-20">
-        <nav className="flex justify-between px-6 md:px-10 pt-6 md:pt-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      </FadeIn>
+
 
       {/* Hero Heading - Absolute Centered */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-10 pointer-events-none">

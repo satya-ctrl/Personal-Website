@@ -51,7 +51,7 @@ const MarqueeSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0C0C0C] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden"
+      className="pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden"
     >
       {/* Row 1 - moves RIGHT */}
       <div className="flex gap-3 mb-3" style={{ willChange: 'transform' }}>

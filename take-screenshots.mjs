@@ -3,10 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const projects = [
-  { id: 'project1', url: 'https://deepfake-detection-system-eight.vercel.app/' },
-  { id: 'project2', url: 'https://nexcart-e-commerce-platform-production.up.railway.app/shop/' },
-  // skipping project3 since it doesn't have a live link
-  { id: 'project4', url: 'https://www.februarysfavourite.com/' }
+  { id: 'project6', url: 'https://resumeeditor-9me0c4brv-satya-ctrls-projects.vercel.app/' }
 ];
 
 const outDir = path.join(process.cwd(), 'public', 'projects');

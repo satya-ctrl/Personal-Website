@@ -38,7 +38,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="bg-[#0C0C0C] border-t border-[#D7E2EA]/10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
+      className="border-t border-[#D7E2EA]/10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
     >
       <FadeIn delay={0} y={40}>
         <h2

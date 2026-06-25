@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Explicitly instruct crawlers to index the site
+# Sitemap: https://yourdomain.com/sitemap.xml
